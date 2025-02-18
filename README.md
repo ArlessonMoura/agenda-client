@@ -1,59 +1,112 @@
-# SistemaAgendamento
+# Sistema de Agendamento Telefônico
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
+![Angular](https://img.shields.io/badge/Angular-17+-DD0031?logo=angular)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-6DB33F?logo=spring)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-4169E1?logo=postgresql)
 
-## Development server
+## ✨ Funcionalidades
 
-To start a local development server, run:
+- **Cadastro de Contatos**
+  - Validação de número único
+  - Campos obrigatórios com feedback visual
+- **Consulta Inteligente**
+  - Busca por nome, celular ou email
+  - Filtragem em tempo real
+  - Paginação responsiva
+- **Gestão de Contatos**
+  - Edição detalhada
+  - Inativação com confirmação
+  - Marcar como favorito
+- **UI Moderna**
+  - Design responsivo baseado no Angular Material
 
-```bash
-ng serve
+## 🛠 Tecnologias Utilizadas
+
+- **Frontend:** Angular 17+, Angular Material
+- **Backend:** Spring Boot 3.x
+- **Banco de Dados:** PostgreSQL 15+
+- **Bibliotecas Extras:** NativeWind para estilização
+
+## 👤 Estrutura do Projeto
+
+```
+/src
+  |-- app
+      |-- components
+      |   |-- cadastro-contato
+      |   |-- consulta-contato
+      |   |-- contato-detalhe
+      |
+      |-- directives
+      |   |-- phone-mask.directive.ts
+      |
+      |-- models
+      |   |-- contato.ts
+      |
+      |-- pipes
+      |   |-- phone.pipes.ts
+      |
+      |-- services
+      |   |-- contato.service.ts
+      |
+      |-- shared
+          |-- confirm-dialog
+              |-- confirm-dialog.component.ts
+              |-- confirm-dialog.component.html
+              |-- confirm-dialog.component.css
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🛠️ Instalação e Execução
 
-## Code scaffolding
+1. **Clone o repositório:**
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+   ```sh
+   git clone https://github.com/seu-usuario/sistema-agendamento.git
+   cd sistema-agendamento
+   ```
 
-```bash
-ng generate component component-name
-```
+2. **Instale as dependências:**
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+   ```sh
+   npm install
+   ```
 
-```bash
-ng generate --help
-```
+3. **Execute o projeto:**
 
-## Building
+   ```sh
+   ng serve
+   ```
 
-To build the project run:
+4. **Acesse no navegador:**
 
-```bash
-ng build
-```
+   ```
+   http://localhost:4200
+   ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🛡️ API de Contatos
 
-## Running unit tests
+O frontend consome os seguintes endpoints do backend:
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- `GET /api/contatos` - Lista todos os contatos
+- `POST /api/contatos` - Cadastra um novo contato
+- `GET /api/contatos/id/{id}` - Busca contato por ID
+- `PUT /api/contatos/{id}` - Atualiza um contato
+- `DELETE /api/contatos/{id}` - Remove um contato
+- `PATCH /api/contatos/{id}/inativar` - Inativa um contato
+- `GET /api/contatos/celular/{celular}` - Busca por celular
+- `GET /api/contatos/nome/{nome}` - Busca por nome
+- `GET /api/contatos/email/{email}` - Busca por email
 
-```bash
-ng test
-```
+## 👨‍💻 Contribuição
 
-## Running end-to-end tests
+Contribuições são bem-vindas! Para contribuir:
 
-For end-to-end (e2e) testing, run:
+1. Fork o repositório
+2. Crie uma branch com sua funcionalidade: `git checkout -b minha-feature`
+3. Commit suas mudanças: `git commit -m 'Adicionando nova feature'`
+4. Push para a branch: `git push origin minha-feature`
+5. Abra um Pull Request
 
-```bash
-ng e2e
-```
+## 🛡️ Licença
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
