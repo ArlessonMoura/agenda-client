@@ -1,6 +1,9 @@
 # Sistema de Agendamento Telefônico
 
 ![Angular](https://img.shields.io/badge/Angular-17+-DD0031?logo=angular)
+
+### (consome API REST)
+
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-6DB33F?logo=spring)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-4169E1?logo=postgresql)
 
