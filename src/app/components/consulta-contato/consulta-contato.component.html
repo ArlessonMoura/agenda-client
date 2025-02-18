@@ -1,0 +1,61 @@
+<div class="consulta-container">
+  <mat-toolbar color="primary">
+    <span>Lista de Contatos</span>
+    <span class="spacer"></span>
+    <mat-form-field appearance="outline" color="accent">
+      <mat-label>Pesquisar</mat-label>
+      <input matInput (keyup)="applyFilter($event)" />
+      <mat-icon matPrefix>search</mat-icon>
+    </mat-form-field>
+  </mat-toolbar>
+
+  <mat-grid-list [cols]="gridCols" rowHeight="100px" gutterSize="15px">
+    <mat-grid-tile
+      *ngFor="
+        let contato of contatosFiltrados
+          | slice : pageIndex * pageSize : (pageIndex + 1) * pageSize
+      "
+      class="contact-tile"
+    >
+      <mat-card class="contact-card">
+        <mat-card-header>
+          <mat-card-title>
+            <mat-icon class="avatar-icon">account_circle</mat-icon>
+            {{ contato.contato_nome }}
+            <mat-icon *ngIf="contato.contato_sn_favorito === 'S'" color="accent"
+              >star</mat-icon
+            >
+          </mat-card-title>
+          <mat-card-subtitle>{{ contato.contato_celular }}</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-actions align="end">
+          <a
+            mat-button
+            [routerLink]="['/detalhe/id', contato.contato_id]"
+            color="primary"
+          >
+            <mat-icon>visibility</mat-icon>
+            Detalhes
+          </a>
+          <button
+            mat-icon-button
+            color="warn"
+            (click)="deleteContact(contato.contato_id)"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-paginator
+    [length]="totalItems"
+    [pageSize]="pageSize"
+    [pageIndex]="pageIndex"
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    (page)="handlePageEvent($event)"
+  >
+  </mat-paginator>
+</div>

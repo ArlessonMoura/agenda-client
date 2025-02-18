@@ -1,0 +1,50 @@
+.consulta-container {
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.consulta-container .spacer {
+  flex: 1 1 auto;
+}
+
+.consulta-container .grid-container {
+  flex: 1;
+  overflow: auto;
+  padding: 16px;
+}
+
+.consulta-container .grid-container .contact-card {
+  width: 100%;
+  height: 100%;
+  margin: 8px;
+}
+
+.consulta-container .grid-container .contact-card mat-card-header {
+  align-items: center;
+}
+
+.consulta-container .grid-container .contact-card mat-card-header .avatar-icon {
+  margin-right: 8px;
+  transform: scale(1.2);
+}
+
+.consulta-container .grid-container .contact-card mat-card-actions {
+  padding: 8px 0;
+}
+
+.consulta-container mat-paginator {
+  margin-top: 16px;
+  background: transparent;
+}
+
+@media (max-width: 600px) {
+  .consulta-container {
+    padding: 8px;
+  }
+
+  .consulta-container .grid-container {
+    padding: 8px;
+  }
+}
