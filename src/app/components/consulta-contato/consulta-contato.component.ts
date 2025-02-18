@@ -17,7 +17,7 @@ import {
   PageEvent,
 } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { PhonePipe } from '../../pipes/phone.pipes';
+// import { PhonePipe } from '../../pipes/phone.pipes';
 
 @Component({
   selector: 'app-consulta-contato',
@@ -35,7 +35,7 @@ import { PhonePipe } from '../../pipes/phone.pipes';
     MatCardModule,
     FormsModule,
     MatPaginatorModule,
-    PhonePipe,
+    // PhonePipe,
   ],
 })
 export class ConsultaContatoComponent implements OnInit {

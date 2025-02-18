@@ -15,6 +15,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import { NgxMaskModule } from 'ngx-mask';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { PhoneMaskDirective } from '../../directives/phone-mask.directive';
 
 @Component({
   selector: 'app-cadastro-contato',
@@ -31,10 +34,14 @@ import { MatDividerModule } from '@angular/material/divider';
     MatCardModule,
     MatIconModule,
     MatDividerModule,
+    NgxMaskModule,
+    MatProgressSpinnerModule,
+    PhoneMaskDirective,
   ],
 })
 export class CadastroContatoComponent {
   form: FormGroup;
+  isSubmitting = false;
 
   constructor(private fb: FormBuilder, private contatoService: ContatoService) {
     this.form = this.fb.group({
